@@ -1,3 +1,8 @@
+/* 
+orange: #e67e22
+
+*/
+
 *{
     margin: 0;
     padding: 0;
@@ -12,6 +17,19 @@ html {
     text-rendering: optimizeLegibility;
 }
 
+/* Clear float after element */
+
+.clearfix {zoom:1}
+
+
+.clearfix:after{ /*the 'after' is crucial!*/
+    content:'.';
+    clear:both;
+    display:block;
+    height: 0;
+}
+
+
 /*------------------------------------------*/
 /* Reusable */
 /*------------------------------------------*/
@@ -21,17 +39,77 @@ html {
     margin: 0 auto;
 }
 
+section{ /* each page */
+    padding: 80px 0; /* tb:80, lr:0 */
+}
+
+/* ----- Headings ----- */
+
+h1,h2,h3 {
+    font-weight: 300; /* decrease font weight */
+    text-transform: uppercase;
+
+}
+
 h1{
     margin-top: 0;
     margin-bottom: 20px;
     color: #fff;
     font-size: 240%; /* headline: larger size */
-    font-weight: 300; /* decrease font weight */
-    text-transform: uppercase;
-    letter-spacing: 1px;
     word-spacing: 4px;
+    letter-spacing: 1px;
 }
 
+h2{
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h2:after{ /* divider after h2 */
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " "; /* must specify content, just put empty as placeholder*/
+    width: 100px;
+    margin: 0 auto; /* tb:0, lr: auto */
+    margin-top: 30px; /* space above divider */
+    margin-bottom: 30px; /* space below divider */
+}
+
+h3{
+    font-size: 110%; 
+    margin-bottom: 15px;
+}
+
+/* ----- Paragraphs ----- */
+
+.long-copy{
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%; /* center content: 15% l + 70% content + 15% r = 100% width */
+    
+}
+
+.box{
+    padding: 1%;
+}
+
+.box p {
+    font-size: 90%;
+    line-height: 145%;
+}
+
+/* ----- Icons ----- */
+
+.icon-big{ /* treat it like text */
+    font-size: 350%; /* can set font size of icons */
+    display: block; /* force in-line break */
+    color: #e67e22; /* can set 'font color' this way */
+    margin-bottom: 10px;
+}
 
 /*------------------------------------------*/
 /* Header */
@@ -51,6 +129,8 @@ header{
     left: 50%;
     transform: translate(-50%, -50%); /* to center */
 }
+
+/* ----- Nav ----- */
 
 .logo{
     height: 100px;
@@ -132,6 +212,104 @@ header{
     color: #fff;
 }
 
+/*------------------------------------------*/
+/* Sectino 1 - Features */
+/*------------------------------------------*/
 
+.section-features .long-copy{
+    margin-bottom: 40px; /* add space above icons */
+}
 
+/*------------------------------------------*/
+/* Section 2 - Meals */
+/*------------------------------------------*/
 
+.section-meals{
+    padding:0;
+}
+
+.meals-showcase{
+    list-style: none;
+    width: 100%;
+}
+
+.meals-showcase li{
+    display: block; /* inline-block will have white space in between */
+    float: left;
+    width: 25%; /* 4 elements, each has to be 25% */
+}
+
+.meal-photo{ /* image container */
+    width: 100%;
+    margin: 0px;
+    overflow: hidden; /* image will not stretch container but cover it */
+    background-color: #000;
+}
+
+.meal-photo img{
+    opacity: 0.7; /* dim: container's black background will show a bit*/
+    width: 100%; /* image as wide as container */
+    height: auto;
+    transform: scale(1.15);
+    transition: transform 0.5s, opacity 0.5s; /* hover transition */
+}
+
+.meal-photo img:hover{
+    opacity: 1; /* make image brighter */
+    width: 100%; /* image as wide as container */
+    height: auto;
+    transform: scale(1.03); /*zoom out on hover; exactly 1 gives whitespace*/
+}
+
+/*------------------------------------------*/
+/* Section 3 - How it works */
+/*------------------------------------------*/
+
+.steps-box{
+    margin-top: 30px;
+}
+
+.steps-box:first-child{ /* iphone image container */
+    text-align: right; /* works for all inline block elements, including img*/
+    padding-right: 3%;
+}
+
+.steps-box: last-child{ /* 3 steps */
+    padding-left: 3%;
+    
+}
+
+/* iphone image */
+.app-screen{ 
+    width: 40%;
+}
+
+/* each step - container */
+.works-step{ 
+    margin-bottom: 50px;
+}
+
+ /* each circular number in the step */
+.works-step div{
+    display: inline-block; /* or else will take up whole width*/
+    border: 2px solid #e67e22;
+    color: #e67e22;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    padding: 5px;
+    float: left; /* so text after number is to the right of number */
+    font-size: 150%;
+    margin-right: 25px;
+}
+
+.works-step:last-of-type{
+    margin-bottom: 80px;
+}
+
+.btn-app img{
+    height: 50px; /* so both buttons have same height */
+    width: auto;
+    margin-right: 10px;
+}
