@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    color : #555; /* font color */
+    font-family: 'Lato', 'Arial', sans-serif; /* if Lato not available, use arial　*/
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+/*------------------------------------------*/
+/* Reusable */
+/*------------------------------------------*/
+
+.row {
+    max-width: 1140px; /* only one with absolute values */
+    margin: 0 auto;
+}
+
+h1{
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 240%; /* headline: larger size */
+    font-weight: 300; /* decrease font weight */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+}
+
+
+/*------------------------------------------*/
+/* Header */
+/*------------------------------------------*/
+
+header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
+    background-position: center;
+    background-size: cover;
+    height:100vh;
+}
+
+.hero-text-box{
+    position: absolute; /* only way to vertically and horizontally center*/
+    width:1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* to center */
+}
+
+.logo{
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+.main-nav{
+    float: right;
+    list-style: none; /* get rid of bullet points */
+    margin-top: 60px;
+}
+
+.main-nav li{
+    display: inline-block; /* to get links side by side */
+    margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited{
+    padding: 8px 0; /* bottom border need spacing */
+    color: #fff; /* text */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%; /* 20*0.9 = 18px */
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid #e67e22;
+}
+
+
+/*------------------------------------------*/
+/* Button */
+/*------------------------------------------*/
+
+.btn:link, 
+.btn:visited{ /* so that both link and visited look the same */
+    display: inline-block;
+    padding:10px 30px; /* t/b:10, l/r:30 */
+    font-weight: 300;
+    text-decoration: none; /* get rid of underline */
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s; /* smooth change */
+}
+
+
+.btn-full:link, 
+.btn-full:visited{
+    background-color: #e67e22;
+    border: 1px solid #e67e22; /* so same size as ghost */
+    color: #fff; /* font color */
+    margin-right: 15px; /* to space out buttons a lil */
+}
+
+.btn-ghost:link, 
+.btn-ghost:visited{
+    border: 1px solid #e67e22;
+    color: #e67e22; /* font color */
+}
+
+.btn:hover,
+.btn:active{ /*hover and active MUST COME AFTER link and visited*/
+    background-color: #cf6d17; /* darker */
+}
+
+.btn-full:hover,
+.btn-full:active{ /*hover and active MUST COME AFTER link and visited*/
+    border: 1px solid #cf6d17; /* border must be darker too */
+}
+
+.btn-ghost:hover,
+.btn-ghost:active{ /*hover and active MUST COME AFTER link and visited*/
+    border: 1px solid #cf6d17; /* border must be darker too */
+    color: #fff;
+}
+
+
+
+
