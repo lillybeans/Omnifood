@@ -37,6 +37,7 @@ header{
     background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
     background-position: center;
     background-size: cover;
+    background-attachment: fixed; /* cool effect where image stays in the same place when scrolling */
     height:100vh;
 }
 
@@ -366,3 +367,112 @@ a:hover{
     margin-bottom: 5px; /* each feature (line), like x happy eaters, etc */
 }
 
+/*------------------------------------------*/
+/* Section 5 - Testimonials */
+/*------------------------------------------*/
+
+.section-testimonials{
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(img/back-customers.jpg);
+    background-size: cover;
+    color: white; /* font */
+    background-attachment: fixed; /*real cool effect where image stays in the same place even if scrolling */
+}
+
+blockquote{
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    position: relative; /* must set this or absolute child won't work */
+}
+
+/*quotation mark*/
+
+blockquote:before{
+    content: "\201C"; /* quotation mark */
+    font-size: 400%;
+    display: block;
+    position: absolute; /*must make sure parent is relative */
+    top: -5px;
+    left: -3px;
+}
+
+blockquote:after{
+    content: "\201D"; /* quotation mark */
+    font-size: 400%;
+    display: block;
+    position: absolute; /*must make sure parent is relative */
+    bottom: 40px;
+    right: 10px;
+}
+
+cite{
+    display: block; /* so it starts next line*/
+    font-size: 90%;
+    margin-top: 25px;
+}
+
+
+cite img{
+    height: 50px;
+    border-radius: 50%; /* make any margin round */
+    margin-right: 10px;
+
+    vertical-align: middle; /* so image is vertically centered with name */
+}
+
+/*------------------------------------------*/
+/* Section 6 - Plans */
+/*------------------------------------------*/
+
+.section-plans{
+    background-color: #f4f4f4;
+}
+
+.plan-box{ /* without plan-box, the white background would not have been possible */
+    background-color: white;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5px; /* remaining 5% is from right, since width is 90% */
+}
+
+.plan-box div{ /* 3 divs: plan type, bullets, sign up button */
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8; /* light grey border at bottom */
+    box-shadow: 0 2px 2px #efefef; /* box shadow: x-offset, y-offset, blur, color */
+}
+
+.plan-box div:first-child{
+    background-color: #fcfcfc; /* bg of first div */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.plan-box div:last-child{ /* div for sign up button */
+    text-align: center;
+    border-bottom: 0;
+}
+
+.plan-price-month{
+    font-size: 300%;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color: #e67e22;
+}
+
+.plan-price-month span{ /* "per month" */
+    font-size: 30%;
+    font-size: 30%;
+    font-weight: 300;
+}
+
+.plan-price-meal{
+    font-size: 80%;
+}
+
+.plan-box ul{
+    list-style: none;
+}
+
+.plan-box ul li{
+    padding: 5px 0; /* no bullet */
+}
